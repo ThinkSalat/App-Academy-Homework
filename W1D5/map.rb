@@ -30,6 +30,11 @@ class Map
   end
 
   def show
-    @map
+    deep_dup(@map)
+  end
+
+  private
+  def deep_dup(map)
+    map.map {|el| el.is_a? Array ? deep_dup(el): el}
   end
 end
