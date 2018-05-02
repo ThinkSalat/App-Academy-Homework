@@ -1,4 +1,12 @@
-class House < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: houses
+#
+#  id      :bigint(8)        not null, primary key
+#  address :string
+#
+
+class House < ApplicationRecord
   validates :address, presence: true
   has_many :residents,
     primary_key: :id,
