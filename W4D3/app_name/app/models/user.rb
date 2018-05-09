@@ -14,18 +14,15 @@
 class User < ApplicationRecord
   attr_reader :password
 
-  validates :username, presence: true, uniqueness: true
+  validates :username, :session_token, presence: true, uniqueness: true
   validates :password_digest, presence: { message: 'Password can\'t be blank' }
-  validates :password, length:{minimum: 8}, allow_nil: true
+  validates :password, length:{minimum: 8, allow_nil: true}
   before_validation :ensure_session_token
 
   def self.find_by_credentials(sign_in,pass_word)
-      user = User.find_by(username: sign_in)
-      if user.is_password?(pass_word)
-        return user
-      else
-        raise 'Invalid credentials'
-      end
+    user = User.find_by(username: sign_in)
+    return user if user && user.is_password?(pass_word)
+    nil
   end
 
   def self.generate_session_token
@@ -34,7 +31,8 @@ class User < ApplicationRecord
 
   def self.reset_session_token!
     session_token = self.class.generate_session_token
-    self.save
+    self.save!
+    session_token
   end
 
   def password=(pw)
