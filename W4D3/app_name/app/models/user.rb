@@ -13,11 +13,11 @@
 
 class User < ApplicationRecord
   attr_reader :password
-  after_initialize :ensure_session_token
 
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true
   validates :password_digest, presence: { message: 'Password can\'t be blank' }
   validates :password, length:{minimum: 8}, allow_nil: true
+  before_validation :ensure_session_token
 
   def self.find_by_credentials(sign_in,pass_word)
       user = User.find_by(username: sign_in)
