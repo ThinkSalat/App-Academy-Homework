@@ -1,6 +1,6 @@
 <% if action == :new %>
   <% action_url = users_url  %>
-  <% submit_text = 'Sign up!' %>
+  <% submit_text = 'Sign up' %>
 <% end %>
 
 <% if action == :login %>
@@ -12,10 +12,10 @@
 
   <%= auth_token %>
 
-  <label for="email">Email:</label>
+  <label for="email">email</label>
   <input class='form' id='email' type="text" name="user[email]">
 
-  <label for="password">Password:</label>
+  <label for="password">password</label>
   <input class ='form' type="password" name="user[password]">
   <input class = 'form' type="submit" value="<%= submit_text %>">
 
