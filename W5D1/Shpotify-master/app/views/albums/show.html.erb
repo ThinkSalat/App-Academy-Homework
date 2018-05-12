@@ -1,0 +1,4 @@
+<br>
+<% track = Track.new(album_id: @album.id) %>
+<div><%= link_to 'All Albums!', albums_url %><%= link_to 'edit this album', edit_album_url(@album) %> <%= link_to 'Add track to album!', new_track_url %> </div>
+<%= render 'album', album: @album %>

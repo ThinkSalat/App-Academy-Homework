@@ -1,0 +1,10 @@
+<h1> 🎼 All The Albums! 🎸 </h1>
+
+<div>  <%= link_to 'Create new album', new_album_url %> </div>
+
+
+<ul>
+<% @albums.each do |album| %>
+  <li class='index_band'><%= link_to "#{album.title} by #{album.band.name}", album_url(album) %></li>
+<% end %>
+</ul>

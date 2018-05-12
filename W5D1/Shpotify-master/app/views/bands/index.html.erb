@@ -1,0 +1,10 @@
+<h1> 🎼 All The Bands! 🎸 </h1>
+
+<div>  <%= link_to 'Create new band', new_band_url %> </div>
+
+
+<ul>
+<% @bands.each do |band| %>
+  <li class='index_band'><%= link_to band.name, band_url(band) %></li>
+<% end %>
+</ul>

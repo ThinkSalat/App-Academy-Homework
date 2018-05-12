@@ -1,0 +1,15 @@
+<h2> <%= track.title %> by
+   <%= link_to track.album.band.name, band_url(track.album.band) %>
+   from album: <%=link_to track.album.title, album_url(track.album)%>
+ </h2>
+
+<label for="title">Track name:</label>
+<h3> <%= track.title %> </h3>
+
+
+<h3>Track no. <%=track.ord%></h3>
+
+<h3><%= 'Bonus Track' if track.bonus %></h3>
+
+<label>lyrics</label>
+<h3> <%= track.lyrics%> </h3>

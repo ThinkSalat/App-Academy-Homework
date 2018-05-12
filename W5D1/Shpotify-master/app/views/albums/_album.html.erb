@@ -1,0 +1,15 @@
+<h2> <%= album.title %> by <%= link_to album.band.name, band_url(album.band) %></h2>
+
+<label for="year">Recorded year:</label>
+<h3> <%= album.year %> </h3>
+
+<label for="live">Recorded in studio or live?:</label>
+<h3> <%= album.live ? 'Live' : 'Studio' %> </h3>
+
+<label> <h2>Tracks</h2> </label>
+<ol>
+<% album.tracks.sort_by{|t|t.ord}.each do |track| %>
+  <li> <%= link_to track.title, track_url(track)%>
+    <%= '*Bonus Track!*' if track.bonus %></li>
+<% end %>
+</ol>

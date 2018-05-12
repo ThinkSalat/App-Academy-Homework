@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>🎵MusicApp🎵</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <header class='header'>
+  <marquee>  <h1 class='welcome'>🎵Welcome to Shpootify🎵</h1></marquee>
+    <% if logged_in? %>
+      <h2 class='login_status'>Welcome 🎭<%= current_user.email %> 🎭</h2>
+      <div>
+        <%= link_to 'Profile page', user_url(current_user) %>
+        <%= link_to 'Home', bands_url %>
+        <%= link_to 'Albums', albums_url %>
+        <%= link_to 'Tracks', tracks_url %>
+
+      </div>
+      <%= button_to 'Sign out', session_url, method: :delete, class: :logout%>
+    <% else %>
+      <div>
+        <%= link_to 'Sign in', new_session_url, class: :signin %>
+        <%= link_to 'Sign up!', new_user_url, class: :signin %>
+        <br>
+        <%= link_to 'Home', bands_url %>
+        <%= link_to 'Albums', albums_url %>
+      </div>
+    <% end %>
+  </header>
+  <body>
+
+
+    <%= yield %>
+  </body>
+</html>

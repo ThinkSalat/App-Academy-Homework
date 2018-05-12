@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ .header {
+   display: flex;
+   flex-direction: column;
+   font-family: 'Annie Use Your Telescope';
+ }
+}
+
+a, label {
+  font-family: 'Helvetica';
+
+}
+.form {
+  color: blueviolet;
+  font-size: 20px;
+}
+label {
+  font-size: 25px;
+}
+div a {
+  font-family: 'Annie Use Your Telescope';
+  display: inline-block;
+  text-decoration: none;
+  background-size: auto;
+  background-color: cornsilk;
+  border-radius: 3px;
+  font-size: 30px;
+  font-style: bold;
+  margin: 5px;
+  color: blueviolet;
+  padding: .2em;
+}
+
+form {
+  font-family: 'Annie Use Your Telescope';
+  display: flex;
+  flex-direction: row;
+  /* align-items: center;
+  justify-content: left; */
+}
+
+h1  {
+  font-family: 'Annie Use Your Telescope';
+  font-size: 60px;
+}
+h2  {
+  font-size: 50px;
+}
+
+body {
+  /* background-color: honeydew; */
+  color: cornsilk;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("gram.png");
+
+}
+.error {
+  font-size: 25px;
+  color: red;
+}

@@ -1,0 +1,38 @@
+<% if action == :new %>
+  <% action_url = albums_url  %>
+  <% submit_text = 'Create!' %>
+<% end %>
+
+<% if action == :edit %>
+  <% action_url = album_url(album)  %>
+  <% submit_text = 'Edit!' %>
+<% end %>
+
+<form  action="<%= action_url %>" method="post">
+  <% if action == :edit %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+  <%= auth_token %>
+  <label for="band">Recording Artist</label>
+  <select id='band' name="album[band_id]">
+    <% Band.all.each do |band| %>
+      <option value=<%= band.id %>
+        <%= 'selected' if album.band_id == band.id%> >
+        <%= band.name %></option>
+    <% end %>
+  </select>
+
+  <label for="title">Album Title:</label>
+  <input class='form' id='title' type="text" name="album[title]" value=' <%= album.title %> '>
+
+  <label for="year">Year:</label>
+  <input id='year' type="text" name="album[year]" value=" <%= album.year %> ">
+
+  <label for='live'>Live or studio recording?</label>
+  <input id='live' type="radio" name="album[live]" value="TRUE" <%= 'checked if album && album.live' %> > Live
+  <br>
+  <input id='live' type="radio" name="album[live]" value="FALSE" <%= 'checked' if album && !album.live %> > Studio
+
+  <input class = 'form' type="submit" value="<%= submit_text %>">
+
+</form>

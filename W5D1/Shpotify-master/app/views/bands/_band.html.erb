@@ -1,0 +1,12 @@
+<h1> <%= band.name %> </h1>
+
+<%= link_to "Add Album by #{band.name}", new_album_url %>
+
+<h2>Albums by <%= band.name %> </h2>
+
+<ul><% band.albums.each do |album| %>
+<li>
+<%= link_to "#{album.title} - #{album.year}", album_url(album) %>
+</li>
+
+<% end %></ul>

@@ -1,0 +1,21 @@
+<% if action == :new %>
+  <% action_url = bands_url  %>
+  <% submit_text = 'Create!' %>
+<% end %>
+
+<% if action == :edit %>
+  <% action_url = band_url(band)  %>
+  <% submit_text = 'Edit!' %>
+<% end %>
+
+<form  action="<%= action_url %>" method="post">
+  <% if action == :edit %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+  <%= auth_token %>
+
+  <label for="name">Band Name:</label>
+  <input class='form' id='name' type="text" name="band[name]" value =' <%= band.name %> '>
+  <input class = 'form' type="submit" value="<%= submit_text %>">
+
+</form>

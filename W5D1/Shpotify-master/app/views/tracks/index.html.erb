@@ -1,0 +1,10 @@
+<h1> 🎼 All The Tracks! 🎸 </h1>
+
+<div>  <%= link_to 'Create new track', new_track_url %> </div>
+
+
+<ul>
+<% @tracks.each do |track| %>
+  <li class='index_band'><%= link_to "#{track.title} by #{track.album.band.name}", track_url(track) %></li>
+<% end %>
+</ul>
