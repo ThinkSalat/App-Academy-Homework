@@ -1,4 +1,5 @@
 class Toy < ApplicationRecord
-  validates :name, uniqueness: { scope: [:toyable] }
   belongs_to :toyable, polymorphic: true
+  validates :name, uniqueness: {scope: :toyable_id}
+
 end
