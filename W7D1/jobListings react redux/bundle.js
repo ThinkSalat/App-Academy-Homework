@@ -79,8 +79,23 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 // jshint esversion: 6
 
+var selectLocation = function selectLocation(city, jobs) {
+    return {
+        type: "SWITCH_LOCATION",
+        city: city,
+        jobs: jobs
+    };
+};
+window.selectLocation = selectLocation;
+
+exports.default = selectLocation;
 
 /***/ }),
 
