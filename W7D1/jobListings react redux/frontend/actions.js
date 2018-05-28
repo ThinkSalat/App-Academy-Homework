@@ -2,9 +2,8 @@
 
 const selectLocation = (city, jobs) => ({
     type: "SWITCH_LOCATION",
-    city: city,
-    jobs: jobs
+    city,
+    jobs
 });
-window.selectLocation = selectLocation;
 
 export default selectLocation;
