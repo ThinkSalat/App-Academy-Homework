@@ -1,3 +1,5 @@
+// jshint esversion: 6
+
 import React from 'react';
 
 const Job = ({title, company, type, location, description, info}) => {

@@ -1,3 +1,5 @@
+// jshint esversion: 6
+
 const initialState = {
   city: "Please Select", 
   jobs: []
