@@ -12076,15 +12076,13 @@ var _reduxThunk = __webpack_require__(210);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _reduxLogger = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"redux-logger\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
 var _root_reducer = __webpack_require__(114);
 
 var _root_reducer2 = _interopRequireDefault(_root_reducer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var store = (0, _redux.createStore)(_root_reducer2.default, (0, _redux.applyMiddleware)(_reduxThunk2.default, _reduxLogger.logger));
+var store = (0, _redux.createStore)(_root_reducer2.default, (0, _redux.applyMiddleware)(_reduxThunk2.default));
 
 exports.default = store;
 
