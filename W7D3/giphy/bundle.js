@@ -12124,13 +12124,155 @@ module.exports = __webpack_require__(79);
 
 
 /***/ }),
-/* 108 */,
-/* 109 */,
-/* 110 */
-/***/ (function(module, exports) {
+/* 108 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Module build failed: SyntaxError: Unexpected token (13:4)\n\n\u001b[0m \u001b[90m 11 | \u001b[39m    \u001b[36mreturn\u001b[39m(\n \u001b[90m 12 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 | \u001b[39m    )\u001b[33m;\u001b[39m\n \u001b[90m    | \u001b[39m    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 | \u001b[39m  }\n \u001b[90m 15 | \u001b[39m}\u001b[0m\n");
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(17);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _giphys_index_item = __webpack_require__(109);
+
+var _giphys_index_item2 = _interopRequireDefault(_giphys_index_item);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function GiphysIndex(_ref) {
+  var giphys = _ref.giphys;
+
+  return _react2.default.createElement(
+    'ul',
+    null,
+    giphys.map(function (giphy) {
+      return _react2.default.createElement(_giphys_index_item2.default, { key: giphy.id, giphy: giphy });
+    })
+  );
+}
+
+exports.default = GiphysIndex;
+
+/***/ }),
+/* 109 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(17);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function GiphysIndexItem(_ref) {
+  var giphy = _ref.giphy;
+
+  return _react2.default.createElement(
+    "li",
+    { className: "giphy-li" },
+    _react2.default.createElement("img", { src: giphy.images.fixed_height.url })
+  );
+}
+
+exports.default = GiphysIndexItem;
+
+/***/ }),
+/* 110 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(17);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _giphys_index = __webpack_require__(108);
+
+var _giphys_index2 = _interopRequireDefault(_giphys_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var GiphysSearch = function (_React$Component) {
+  _inherits(GiphysSearch, _React$Component);
+
+  function GiphysSearch(props) {
+    _classCallCheck(this, GiphysSearch);
+
+    var _this = _possibleConstructorReturn(this, (GiphysSearch.__proto__ || Object.getPrototypeOf(GiphysSearch)).call(this, props));
+
+    _this.state = {
+      searchTerm: ''
+    };
+
+    _this.handleChange = _this.handleChange.bind(_this);
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    return _this;
+  }
+
+  _createClass(GiphysSearch, [{
+    key: 'handleChange',
+    value: function handleChange(event) {
+      event.preventDefault();
+      this.setState({ searchTerm: event.target.value });
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(event) {
+      event.preventDefault();
+      var searchTerm = this.state.searchTerm;
+      this.props.fetchSearchGiphys(searchTerm);
+      this.setState({ searchTerm: '' });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Search for Giphys!'
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement('input', { onChange: this.handleChange, type: 'text', value: this.state.searchTerm }),
+          _react2.default.createElement('input', { onClick: this.handleSubmit, type: 'submit', value: 'Search Giphy!' })
+        ),
+        _react2.default.createElement(_giphys_index2.default, { giphys: this.props.giphys })
+      );
+    }
+  }]);
+
+  return GiphysSearch;
+}(_react2.default.Component);
+
+exports.default = GiphysSearch;
 
 /***/ }),
 /* 111 */
