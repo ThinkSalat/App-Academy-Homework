@@ -490,7 +490,7 @@ module.exports = ExecutionEnvironment;
 
 
 
-var DOMProperty = __webpack_require__(15);
+var DOMProperty = __webpack_require__(14);
 var ReactBrowserEventEmitter = __webpack_require__(25);
 var ReactCurrentOwner = __webpack_require__(11);
 var ReactDOMFeatureFlags = __webpack_require__(80);
@@ -500,7 +500,7 @@ var ReactInstanceHandles = __webpack_require__(18);
 var ReactInstanceMap = __webpack_require__(22);
 var ReactMarkupChecksum = __webpack_require__(90);
 var ReactPerf = __webpack_require__(7);
-var ReactReconciler = __webpack_require__(16);
+var ReactReconciler = __webpack_require__(15);
 var ReactUpdateQueue = __webpack_require__(44);
 var ReactUpdates = __webpack_require__(8);
 
@@ -1707,7 +1707,7 @@ module.exports = ReactPerf;
 var CallbackQueue = __webpack_require__(38);
 var PooledClass = __webpack_require__(13);
 var ReactPerf = __webpack_require__(7);
-var ReactReconciler = __webpack_require__(16);
+var ReactReconciler = __webpack_require__(15);
 var Transaction = __webpack_require__(29);
 
 var assign = __webpack_require__(2);
@@ -2266,16 +2266,6 @@ module.exports = PooledClass;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-module.exports = __webpack_require__(164);
-
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -2513,7 +2503,7 @@ module.exports = DOMProperty;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2626,7 +2616,7 @@ var ReactReconciler = {
 module.exports = ReactReconciler;
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2811,6 +2801,16 @@ PooledClass.addPoolingTo(SyntheticEvent, PooledClass.fourArgumentPooler);
 
 module.exports = SyntheticEvent;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(164);
+
 
 /***/ }),
 /* 18 */
@@ -3648,7 +3648,7 @@ module.exports = ReactInstanceMap;
 
 
 
-var SyntheticEvent = __webpack_require__(17);
+var SyntheticEvent = __webpack_require__(16);
 
 var getEventTarget = __webpack_require__(49);
 
@@ -4967,7 +4967,7 @@ module.exports = CallbackQueue;
 
 
 
-var DOMProperty = __webpack_require__(15);
+var DOMProperty = __webpack_require__(14);
 var ReactPerf = __webpack_require__(7);
 
 var quoteAttributeValueForBrowser = __webpack_require__(208);
@@ -6944,34 +6944,11 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.receiveSearchGiphys = exports.fetchSearchGiphys = exports.REQUEST_SEARCH_GIPHYS = exports.RECEIVE_SEARCH_GIPHYS = undefined;
-
 var _api_util = __webpack_require__(115);
 
 var APIUtil = _interopRequireWildcard(_api_util);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-var RECEIVE_SEARCH_GIPHYS = exports.RECEIVE_SEARCH_GIPHYS = 'RECEIVE_SEARCH_GIPHYS';
-var REQUEST_SEARCH_GIPHYS = exports.REQUEST_SEARCH_GIPHYS = 'REQUEST_SEARCH_GIPHYS';
-
-var fetchSearchGiphys = exports.fetchSearchGiphys = function fetchSearchGiphys(searchTerm) {
-	return function (dispatch) {
-		return APIUtil.fetchSearchGiphys(searchTerm).then(function (giphys) {
-			return dispatch(receiveSearchGiphys(giphys.data));
-		});
-	};
-};
-
-var receiveSearchGiphys = exports.receiveSearchGiphys = function receiveSearchGiphys(giphys) {
-	return {
-		type: RECEIVE_SEARCH_GIPHYS,
-		giphys: giphys
-	};
-};
 
 /***/ }),
 /* 59 */
@@ -7484,7 +7461,7 @@ module.exports = warning;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(131);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_Subscription__ = __webpack_require__(151);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_PropTypes__ = __webpack_require__(71);
@@ -9546,7 +9523,7 @@ var ReactDefaultInjection = __webpack_require__(84);
 var ReactInstanceHandles = __webpack_require__(18);
 var ReactMount = __webpack_require__(5);
 var ReactPerf = __webpack_require__(7);
-var ReactReconciler = __webpack_require__(16);
+var ReactReconciler = __webpack_require__(15);
 var ReactUpdates = __webpack_require__(8);
 var ReactVersion = __webpack_require__(45);
 
@@ -10457,7 +10434,7 @@ module.exports = ReactElementValidator;
 
 var ReactElement = __webpack_require__(6);
 var ReactEmptyComponentRegistry = __webpack_require__(87);
-var ReactReconciler = __webpack_require__(16);
+var ReactReconciler = __webpack_require__(15);
 
 var assign = __webpack_require__(2);
 
@@ -12056,11 +12033,7 @@ module.exports = g;
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(14);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -12072,28 +12045,12 @@ var _giphys_search_container2 = _interopRequireDefault(_giphys_search_container)
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Root = function Root(_ref) {
-  var store = _ref.store;
-
-  return _react2.default.createElement(
-    _reactRedux.Provider,
-    { store: store },
-    _react2.default.createElement(_giphys_search_container2.default, null)
-  );
-};
-
-exports.default = Root;
-
 /***/ }),
 /* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
 var _redux = __webpack_require__(57);
 
@@ -12106,12 +12063,6 @@ var _root_reducer = __webpack_require__(114);
 var _root_reducer2 = _interopRequireDefault(_root_reducer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var configureStore = function configureStore() {
-  return (0, _redux.createStore)(_root_reducer2.default, (0, _redux.applyMiddleware)(_reduxThunk2.default));
-};
-
-exports.default = configureStore;
 
 /***/ }),
 /* 107 */
@@ -12130,11 +12081,7 @@ module.exports = __webpack_require__(79);
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(14);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -12144,48 +12091,12 @@ var _giphys_index_item2 = _interopRequireDefault(_giphys_index_item);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function GiphysIndex(_ref) {
-  var giphys = _ref.giphys;
-
-  return _react2.default.createElement(
-    'ul',
-    null,
-    giphys.map(function (giphy) {
-      return _react2.default.createElement(_giphys_index_item2.default, { key: giphy.id, giphy: giphy });
-    })
-  );
-}
-
-exports.default = GiphysIndex;
-
 /***/ }),
 /* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(14);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function GiphysIndexItem(_ref) {
-  var giphy = _ref.giphy;
-
-  return _react2.default.createElement(
-    "li",
-    { className: "giphy-li" },
-    _react2.default.createElement("img", { src: giphy.images.fixed_height.url })
-  );
-}
-
-exports.default = GiphysIndexItem;
 
 /***/ }),
 /* 110 */
@@ -12194,13 +12105,7 @@ exports.default = GiphysIndexItem;
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(14);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -12210,82 +12115,12 @@ var _giphys_index2 = _interopRequireDefault(_giphys_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var GiphysSearch = function (_React$Component) {
-  _inherits(GiphysSearch, _React$Component);
-
-  function GiphysSearch() {
-    _classCallCheck(this, GiphysSearch);
-
-    var _this = _possibleConstructorReturn(this, (GiphysSearch.__proto__ || Object.getPrototypeOf(GiphysSearch)).call(this));
-
-    _this.state = { searchTerm: 'golden retriever' };
-    _this.handleChange = _this.handleChange.bind(_this);
-    _this.handleSubmit = _this.handleSubmit.bind(_this);
-    return _this;
-  }
-
-  _createClass(GiphysSearch, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.props.fetchSearchGiphys('golden+retriever');
-    }
-  }, {
-    key: 'handleChange',
-    value: function handleChange(e) {
-      this.setState({ searchTerm: e.currentTarget.value });
-    }
-  }, {
-    key: 'handleSubmit',
-    value: function handleSubmit(e) {
-      e.preventDefault();
-      var searchTerm = this.state.searchTerm.split(' ').join('+');
-      this.props.fetchSearchGiphys(searchTerm);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var giphys = this.props.giphys;
-
-
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'form',
-          { className: 'search-bar' },
-          _react2.default.createElement('input', { value: this.state.searchTerm, onChange: this.handleChange }),
-          _react2.default.createElement(
-            'button',
-            { type: 'submit', onClick: this.handleSubmit },
-            'Search Giphy'
-          )
-        ),
-        _react2.default.createElement(_giphys_index2.default, { giphys: giphys })
-      );
-    }
-  }]);
-
-  return GiphysSearch;
-}(_react2.default.Component);
-
-exports.default = GiphysSearch;
-
 /***/ }),
 /* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
 var _reactRedux = __webpack_require__(70);
 
@@ -12297,20 +12132,6 @@ var _giphy_actions = __webpack_require__(58);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var mapStateToProps = function mapStateToProps(state) {
-  return { giphys: state.giphys };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    fetchSearchGiphys: function fetchSearchGiphys(searchTerm) {
-      return dispatch((0, _giphy_actions.fetchSearchGiphys)(searchTerm));
-    }
-  };
-};
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_giphys_search2.default);
-
 /***/ }),
 /* 112 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12318,7 +12139,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 "use strict";
 
 
-var _react = __webpack_require__(14);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -12336,12 +12157,6 @@ var _root2 = _interopRequireDefault(_root);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-document.addEventListener('DOMContentLoaded', function () {
-	var store = (0, _store2.default)();
-	var root = document.getElementById('root');
-	_reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
-});
-
 /***/ }),
 /* 113 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12349,25 +12164,7 @@ document.addEventListener('DOMContentLoaded', function () {
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
 var _giphy_actions = __webpack_require__(58);
-
-var giphysReducer = function giphysReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  var action = arguments[1];
-
-  switch (action.type) {
-    case _giphy_actions.RECEIVE_SEARCH_GIPHYS:
-      return action.giphys;
-    default:
-      return state;
-  }
-};
-
-exports.default = giphysReducer;
 
 /***/ }),
 /* 114 */
@@ -12375,10 +12172,6 @@ exports.default = giphysReducer;
 
 "use strict";
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
 var _redux = __webpack_require__(57);
 
@@ -12388,10 +12181,6 @@ var _giphys_reducer2 = _interopRequireDefault(_giphys_reducer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = (0, _redux.combineReducers)({
-  giphys: _giphys_reducer2.default
-});
-
 /***/ }),
 /* 115 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12400,13 +12189,12 @@ exports.default = (0, _redux.combineReducers)({
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 var fetchSearchGiphys = exports.fetchSearchGiphys = function fetchSearchGiphys(searchTerm) {
-  return $.ajax({
-    method: 'GET',
-    url: 'http://api.giphy.com/v1/gifs/search?q=' + searchTerm + '&api_key=dc6zaTOxFJmzC&limit=2'
-  });
+    return $.get({
+        url: "http://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=dc6zaTOxFJmzC&limit=2"
+    });
 };
 
 /***/ }),
@@ -14232,7 +14020,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["b"] = createProvider;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
@@ -15470,7 +15258,7 @@ var EventPluginHub = __webpack_require__(20);
 var EventPropagators = __webpack_require__(21);
 var ExecutionEnvironment = __webpack_require__(4);
 var ReactUpdates = __webpack_require__(8);
-var SyntheticEvent = __webpack_require__(17);
+var SyntheticEvent = __webpack_require__(16);
 
 var getEventTarget = __webpack_require__(49);
 var isEventSupported = __webpack_require__(52);
@@ -16446,7 +16234,7 @@ module.exports = FallbackCompositionState;
 
 
 
-var DOMProperty = __webpack_require__(15);
+var DOMProperty = __webpack_require__(14);
 var ExecutionEnvironment = __webpack_require__(4);
 
 var MUST_USE_ATTRIBUTE = DOMProperty.injection.MUST_USE_ATTRIBUTE;
@@ -16772,7 +16560,7 @@ module.exports = ReactBrowserComponentMixin;
 
 
 
-var ReactReconciler = __webpack_require__(16);
+var ReactReconciler = __webpack_require__(15);
 
 var instantiateReactComponent = __webpack_require__(51);
 var shouldUpdateReactComponent = __webpack_require__(54);
@@ -16907,7 +16695,7 @@ var ReactInstanceMap = __webpack_require__(22);
 var ReactPerf = __webpack_require__(7);
 var ReactPropTypeLocations = __webpack_require__(27);
 var ReactPropTypeLocationNames = __webpack_require__(26);
-var ReactReconciler = __webpack_require__(16);
+var ReactReconciler = __webpack_require__(15);
 var ReactUpdateQueue = __webpack_require__(44);
 
 var assign = __webpack_require__(2);
@@ -17662,7 +17450,7 @@ module.exports = ReactDOMButton;
 
 var AutoFocusUtils = __webpack_require__(153);
 var CSSPropertyOperations = __webpack_require__(155);
-var DOMProperty = __webpack_require__(15);
+var DOMProperty = __webpack_require__(14);
 var DOMPropertyOperations = __webpack_require__(39);
 var EventConstants = __webpack_require__(10);
 var ReactBrowserEventEmitter = __webpack_require__(25);
@@ -19437,7 +19225,7 @@ module.exports = ReactDOMTextarea;
 
 
 
-var DOMProperty = __webpack_require__(15);
+var DOMProperty = __webpack_require__(14);
 var ReactDefaultPerfAnalysis = __webpack_require__(177);
 var ReactMount = __webpack_require__(5);
 var ReactPerf = __webpack_require__(7);
@@ -20147,7 +19935,7 @@ module.exports = ReactEventListener;
 
 
 
-var DOMProperty = __webpack_require__(15);
+var DOMProperty = __webpack_require__(14);
 var EventPluginHub = __webpack_require__(20);
 var ReactComponentEnvironment = __webpack_require__(42);
 var ReactClass = __webpack_require__(77);
@@ -20277,7 +20065,7 @@ var ReactComponentEnvironment = __webpack_require__(42);
 var ReactMultiChildUpdateTypes = __webpack_require__(91);
 
 var ReactCurrentOwner = __webpack_require__(11);
-var ReactReconciler = __webpack_require__(16);
+var ReactReconciler = __webpack_require__(15);
 var ReactChildReconciler = __webpack_require__(166);
 
 var flattenChildren = __webpack_require__(204);
@@ -21326,7 +21114,7 @@ module.exports = ReactServerRenderingTransaction;
 
 
 
-var DOMProperty = __webpack_require__(15);
+var DOMProperty = __webpack_require__(14);
 
 var MUST_USE_ATTRIBUTE = DOMProperty.injection.MUST_USE_ATTRIBUTE;
 
@@ -21463,7 +21251,7 @@ var EventConstants = __webpack_require__(10);
 var EventPropagators = __webpack_require__(21);
 var ExecutionEnvironment = __webpack_require__(4);
 var ReactInputSelection = __webpack_require__(89);
-var SyntheticEvent = __webpack_require__(17);
+var SyntheticEvent = __webpack_require__(16);
 
 var getActiveElement = __webpack_require__(62);
 var isTextInputElement = __webpack_require__(100);
@@ -21706,7 +21494,7 @@ var EventListener = __webpack_require__(59);
 var EventPropagators = __webpack_require__(21);
 var ReactMount = __webpack_require__(5);
 var SyntheticClipboardEvent = __webpack_require__(193);
-var SyntheticEvent = __webpack_require__(17);
+var SyntheticEvent = __webpack_require__(16);
 var SyntheticFocusEvent = __webpack_require__(196);
 var SyntheticKeyboardEvent = __webpack_require__(198);
 var SyntheticMouseEvent = __webpack_require__(28);
@@ -22296,7 +22084,7 @@ module.exports = SimpleEventPlugin;
 
 
 
-var SyntheticEvent = __webpack_require__(17);
+var SyntheticEvent = __webpack_require__(16);
 
 /**
  * @interface Event
@@ -22341,7 +22129,7 @@ module.exports = SyntheticClipboardEvent;
 
 
 
-var SyntheticEvent = __webpack_require__(17);
+var SyntheticEvent = __webpack_require__(16);
 
 /**
  * @interface Event
@@ -22470,7 +22258,7 @@ module.exports = SyntheticFocusEvent;
 
 
 
-var SyntheticEvent = __webpack_require__(17);
+var SyntheticEvent = __webpack_require__(16);
 
 /**
  * @interface Event
